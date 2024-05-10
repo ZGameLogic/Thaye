@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test
+  name: thaye
   labels:
-    app: test
+    app: thaye
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test
+      app: thaye
   template:
     metadata:
-      name: test
+      name: thaye
       labels:
-        app: test
+        app: thaye
     spec:
       containers:
-        - name: test
-          image: ghcr.io/zgamelogic/test:master
+        - name: thaye
+          image: ghcr.io/zgamelogic/thaye:master
           imagePullPolicy: Always
           volumeMounts:
             - name: keystore-volume

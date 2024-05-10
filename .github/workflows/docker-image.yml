@@ -44,4 +44,4 @@
 #    needs: build
 #    steps:
 #      - name: Rolling update
-#        run: sudo kubectl rollout restart deployment test
+#        run: sudo kubectl rollout restart deployment thaye
