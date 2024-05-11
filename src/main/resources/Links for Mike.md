@@ -8,6 +8,7 @@ up from this link is what events to use when (since there are many).
 
 [Discord developer docs](https://discord.com/developers/docs/intro): 
 Everything you need to know pretty much. Since this is in java take the coding example with a grain of salt, but everything else is very good information
+[Discord gateway intents](https://discord.com/developers/docs/topics/gateway)
 
 [Slash Commands](https://discord.com/developers/docs/interactions/application-commands#slash-commands):
 The easiest way to create a user interaction
