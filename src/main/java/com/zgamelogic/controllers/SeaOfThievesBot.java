@@ -3,9 +3,9 @@ package com.zgamelogic.controllers;
 import com.zgamelogic.annotations.DiscordController;
 import com.zgamelogic.annotations.DiscordMapping;
 import com.zgamelogic.annotations.EventProperty;
-import com.zgamelogic.data.api.zGameLogic.SOTData;
+import com.zgamelogic.data.database.seaOfThieves.SOTDateAvailable;
+import com.zgamelogic.data.database.seaOfThieves.SOTRepository;
 import com.zgamelogic.data.discord.SeaOfThievesEventData;
-import com.zgamelogic.services.ZGameLogicService;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
@@ -25,10 +25,10 @@ import java.util.List;
 @Slf4j
 public class SeaOfThievesBot {
     private final static Color SEA_OF_THIEVES_COLOR = new Color(21, 230, 154);
-    private final ZGameLogicService zGameLogicService;
+    private final SOTRepository sotRepository;
 
-    public SeaOfThievesBot(ZGameLogicService zGameLogicService) {
-        this.zGameLogicService = zGameLogicService;
+    public SeaOfThievesBot(SOTRepository sotRepository) {
+        this.sotRepository = sotRepository;
     }
 
     @DiscordMapping(Id = "sot", SubId = "data-point")
@@ -36,11 +36,11 @@ public class SeaOfThievesBot {
             SlashCommandInteractionEvent event,
             @EventProperty SeaOfThievesEventData data
     ){
-        SOTData returnData = zGameLogicService.postSeoOfThievesData(data);
+        SOTDateAvailable returnData = sotRepository.save(new SOTDateAvailable(data));
         event.replyEmbeds(sotDataMessage(returnData)).queue();
     }
 
-    private MessageEmbed sotDataMessage(SOTData returnData) {
+    private MessageEmbed sotDataMessage(SOTDateAvailable returnData) {
         EmbedBuilder eb = new EmbedBuilder();
         eb.setColor(SEA_OF_THIEVES_COLOR);
         eb.setTitle("Data recorded");

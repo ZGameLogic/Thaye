@@ -1,10 +1,11 @@
-package com.zgamelogic.data.api.zGameLogic;
+package com.zgamelogic.data.database.seaOfThieves;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.joestelmach.natty.DateGroup;
 import com.joestelmach.natty.Parser;
 import com.zgamelogic.data.discord.SeaOfThievesEventData;
-import lombok.Getter;
+import jakarta.persistence.*;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -12,19 +13,24 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
-@Getter
-@NoArgsConstructor(force = true)
-public class SOTData {
-    private final long id;
-    private final boolean ben;
-    private final boolean greg;
-    private final boolean jj;
-    private final boolean patrick;
-    private final boolean success;
+@Entity
+@Table(name = "sot_data")
+@NoArgsConstructor
+@Data
+public class SOTDateAvailable {
+    @Id
+    @GeneratedValue
+    private long id;
+    private boolean ben;
+    private boolean patrick;
+    private boolean jj;
+    private boolean greg;
+    private boolean success;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSSSSS")
-    private final LocalDateTime proposed;
+    private LocalDateTime proposed;
 
-    public SOTData(SeaOfThievesEventData data){
+
+    public SOTDateAvailable(SeaOfThievesEventData data){
         id = 0;
         ben = data.ben();
         greg = data.greg();
