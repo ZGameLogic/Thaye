@@ -29,7 +29,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /health
-              port: 8080
+              port: 8085
               scheme: HTTP
             initialDelaySeconds: 15
             periodSeconds: 5

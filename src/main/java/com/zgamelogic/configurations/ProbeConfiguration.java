@@ -20,7 +20,7 @@ public class ProbeConfiguration {
 
     private Connector createStandardConnector() {
         Connector connector = new Connector(TomcatServletWebServerFactory.DEFAULT_PROTOCOL);
-        connector.setPort(8080);
+        connector.setPort(8085);
         return connector;
     }
 }
