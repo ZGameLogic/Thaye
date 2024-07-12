@@ -23,6 +23,16 @@ spec:
             - name: keystore-volume
               mountPath: "/etc/keystore"
               readOnly: true
+          env:
+            - name: TZ
+              value: "America/Chicago"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 15
+            periodSeconds: 5
       volumes:
         - name: keystore-volume
           secret:
