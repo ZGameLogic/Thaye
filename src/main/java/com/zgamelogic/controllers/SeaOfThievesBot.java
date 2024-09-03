@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.interactions.IntegrationType;
+import net.dv8tion.jda.api.interactions.InteractionContextType;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
@@ -63,7 +65,7 @@ public class SeaOfThievesBot {
                                 .addOption(OptionType.BOOLEAN, "patrick", "Did Patrick join", true)
                                 .addOption(OptionType.BOOLEAN, "success", "Did this event happen", true)
                                 .addOption(OptionType.STRING, "time", "What time did this take place", true)
-                )
+                ).setContexts(InteractionContextType.ALL).setIntegrationTypes(IntegrationType.ALL)
         );
     }
 }
