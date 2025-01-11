@@ -40,9 +40,10 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
   disable-monitor:
-    uses: zgamelogic/data-otter-monitor-active/.github/workflows/action.yml@v1.0.0
+    uses: zgamelogic/data-otter-monitor-active/.github/workflows/action.yml@v1.0.2
     needs: build
     with:
+      applicationId: 6
       monitorId: 4
       active: false
   Kubernetes:
@@ -60,9 +61,10 @@ jobs:
       - name: Wait for readiness probe
         run: sudo kubectl rollout status deployment thaye --timeout=600s
   enable-monitor:
-    uses: zgamelogic/data-otter-monitor-active/.github/workflows/action.yml@v1.0.0
+    uses: zgamelogic/data-otter-monitor-active/.github/workflows/action.yml@v1.0.2
     needs: [ build, disable-monitor, Kubernetes ]
     if: always()
     with:
+      applicationId: 6
       monitorId: 4
       active: true
