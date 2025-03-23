@@ -19,10 +19,6 @@ spec:
         - name: thaye
           image: ghcr.io/zgamelogic/thaye:master
           imagePullPolicy: Always
-          volumeMounts:
-            - name: keystore-volume
-              mountPath: "/etc/keystore"
-              readOnly: true
           env:
             - name: TZ
               value: "America/Chicago"
@@ -33,12 +29,7 @@ spec:
               scheme: HTTP
             initialDelaySeconds: 15
             periodSeconds: 5
-      volumes:
-        - name: keystore-volume
-          secret:
-            secretName: ssl-keystore-secret
       restartPolicy: Always
       imagePullSecrets:
         - name: ghcr-secret
 
-      
