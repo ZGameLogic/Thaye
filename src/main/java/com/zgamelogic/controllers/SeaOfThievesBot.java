@@ -38,8 +38,9 @@ public class SeaOfThievesBot {
             SlashCommandInteractionEvent event,
             @EventProperty SeaOfThievesEventData data
     ){
+        event.deferReply().queue();
         SOTDateAvailable returnData = sotRepository.save(new SOTDateAvailable(data));
-        event.replyEmbeds(sotDataMessage(returnData)).queue();
+        event.getHook().sendMessageEmbeds(sotDataMessage(returnData)).queue();
     }
 
     private MessageEmbed sotDataMessage(SOTDateAvailable returnData) {
