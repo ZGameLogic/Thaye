@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 LABEL authors="Ben Shabowski"
 
-FROM arm64v8/openjdk:21-jdk-buster
+FROM arm64v8/openjdk:25-jdk-buster
 
 WORKDIR /app
 COPY /target/thaye-1.0.0.jar /app/thaye-1.0.0.jar

@@ -24,8 +24,8 @@ spec:
               value: "America/Chicago"
           readinessProbe:
             httpGet:
-              path: /health
-              port: 8085
+              path: /actuator/health
+              port: 8080
               scheme: HTTP
             initialDelaySeconds: 15
             periodSeconds: 5
