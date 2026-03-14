@@ -5,7 +5,7 @@ on:
     branches: [ "master" ]
 jobs:
   disable-monitor:
-    uses: zgamelogic/github-actions/.github/workflows/kubernetes-spring/kubernetes-deploy.yaml@0.0.1
+    uses: zgamelogic/github-actions/.github/workflows/kubernetes-deploy.yaml@0.0.1
     with:
       applicationId: 7
       monitorIds: '7'
