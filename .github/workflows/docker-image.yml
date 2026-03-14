@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "master" ]
 jobs:
-  disable-monitor:
+  deploy:
     permissions:
       contents: read
       packages: write
