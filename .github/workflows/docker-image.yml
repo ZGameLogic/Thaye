@@ -5,6 +5,9 @@ on:
     branches: [ "master" ]
 jobs:
   disable-monitor:
+    permissions:
+      contents: read
+      packages: write
     uses: zgamelogic/github-actions/.github/workflows/kubernetes-deploy.yaml@0.0.1
     with:
       applicationId: 7
