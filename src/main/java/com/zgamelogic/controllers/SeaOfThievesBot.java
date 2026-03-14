@@ -34,7 +34,7 @@ public class SeaOfThievesBot {
     }
 
     @SlashCommandMapping(id = "sot", sub = "data-point")
-    private void addData(
+    public void addData(
             SlashCommandInteractionEvent event,
             @EventProperty SeaOfThievesEventData data
     ){
