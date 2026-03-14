@@ -1,3 +1,6 @@
+ARG SPRING_PROFILES_ACTIVE
+ENV SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
+
 FROM ubuntu:latest
 LABEL authors="Ben Shabowski"
 
@@ -8,4 +11,4 @@ COPY /target/thaye-1.0.0.jar /app/thaye-1.0.0.jar
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "-Dspring.profiles.active=cluster", "thaye-1.0.0.jar"]
+CMD ["java", "-jar", "thaye-1.0.0.jar"]

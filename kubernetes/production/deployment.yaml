@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: thaye
-          image: ghcr.io/zgamelogic/thaye:master
+          image: ghcr.io/zgamelogic/thaye:production
           imagePullPolicy: Always
           env:
             - name: TZ

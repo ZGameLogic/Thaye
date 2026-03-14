@@ -9,22 +9,22 @@
     <version>1.0.0</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.4</version>
+        <version>3.5.11</version>
     </parent>
 
     <dependencies>
         <dependency>
             <groupId>com.zgamelogic</groupId>
             <artifactId>spring-boot-starter-discord</artifactId>
-            <version>1.4.5</version>
+            <version>6.0.1</version>
         </dependency>
 
         <dependency>
@@ -76,7 +76,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.5.11</version>
                 <executions>
                     <execution>
                         <goals>

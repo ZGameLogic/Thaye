@@ -1,11 +1,11 @@
 package com.zgamelogic.controllers;
 
-import com.zgamelogic.annotations.DiscordController;
-import com.zgamelogic.annotations.DiscordMapping;
-import com.zgamelogic.annotations.EventProperty;
 import com.zgamelogic.data.database.seaOfThieves.SOTDateAvailable;
 import com.zgamelogic.data.database.seaOfThieves.SOTRepository;
 import com.zgamelogic.data.discord.SeaOfThievesEventData;
+import com.zgamelogic.discord.annotations.DiscordController;
+import com.zgamelogic.discord.annotations.EventProperty;
+import com.zgamelogic.discord.annotations.mappings.SlashCommandMapping;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
@@ -33,7 +33,7 @@ public class SeaOfThievesBot {
         this.sotRepository = sotRepository;
     }
 
-    @DiscordMapping(Id = "sot", SubId = "data-point")
+    @SlashCommandMapping(id = "sot", sub = "data-point")
     private void addData(
             SlashCommandInteractionEvent event,
             @EventProperty SeaOfThievesEventData data
