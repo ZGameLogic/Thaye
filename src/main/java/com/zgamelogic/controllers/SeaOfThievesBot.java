@@ -35,8 +35,8 @@ public class SeaOfThievesBot {
 
     @SlashCommandMapping(id = "sot", sub = "data-point")
     public void addData(
-            SlashCommandInteractionEvent event,
-            @EventProperty SeaOfThievesEventData data
+        SlashCommandInteractionEvent event,
+        @EventProperty SeaOfThievesEventData data
     ){
         event.deferReply().queue();
         SOTDateAvailable returnData = sotRepository.save(new SOTDateAvailable(data));
