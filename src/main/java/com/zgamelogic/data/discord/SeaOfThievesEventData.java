@@ -1,4 +1,4 @@
 package com.zgamelogic.data.discord;
 
-public record SeaOfThievesEventData(boolean ben, boolean greg, boolean jj, boolean patrick, boolean success, String time) {
+public record SeaOfThievesEventData(Boolean ben, Boolean greg, Boolean jj, Boolean patrick, Boolean success, String time) {
 }
